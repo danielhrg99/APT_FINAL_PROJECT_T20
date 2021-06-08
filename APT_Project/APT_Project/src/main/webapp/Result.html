@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="Result.json"></script>
+<script type="text/javascript" >
+var x= 0;
+function page() {
+	fetch("Result.json").then(response => response.json())
+	.then(data => {
+		if (data.Status == 0)
+			document.getElementById("demo").innerHTML = "Nothing Found";
+		else
+		{
+			for(var i=x;i<x+10;i++)
+			{
+				document.getElementById("_id"+((i%10)+1)).innerHTML = data.Results[i]._id;
+				document.getElementById("_id"+((i%10)+1)).href = data.Results[i]._id ;
+				document.getElementById("Title"+((i%10)+1)).innerHTML = data.Results[i].Title;
+				document.getElementById("Snippet"+((i%10)+1)).innerHTML = data.Results[i].Snippet;
+			}
+			x=x+10;
+		}
+		
+	})
+}
+
+</script>
+<style type="text/css">
+.Heading{
+	color: blue;
+	font-size:80px;
+	text-align:center;
+	width: 100%;
+}
+.maintext{
+	color:blue;
+	
+	text-align: center;
+}
+
+</style>
+
+</head>
+<header class="Heading " >
+<div >
+
+Google
+
+</div>
+</header>
+<body >
+	<form method="get" action=QueryProcessor >
+<div class="maintext">
+	<input type="text" style="width:400px; height:30px;" name =SearchWord>
+	<input class="maintext" type="submit"  value="Search"  style=" height:30px; margin-top: 10px" >
+</div>
+</form>
+	<p id="demo" ></p>
+	<div style="margin:15px">
+	<a id="_id1" ></a>
+	<p id="Title1" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet1" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div >
+	<div style="margin:15px">
+	<a id="_id2"></a>
+	<p id="Title2" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet2" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div>
+	<div style="margin:15px">
+	<a id="_id3"></a>
+	<p id="Title3" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet3" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div>
+	<div style="margin:15px">
+	<a id="_id4"></a>
+	<p id="Title4" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet4" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div >
+	<div style="margin:15px">
+	<a id="_id5"></a>
+	<p id="Title5" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet5" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div>
+	<div style="margin:15px">
+	<a id="_id6"></a>
+	<p id="Title6" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet6" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div>
+	<div style="margin:15px">
+	<a id="_id7"></a>
+	<p id="Title7" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet7" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div >
+	<div style="margin:15px">
+	<a id="_id8"></a>
+	<p id="Title8" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet8" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div >
+	<div style="margin:15px">
+	<a id="_id9"></a>
+	<p id="Title9" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet9" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div>
+	<div style="margin:15px">
+	<a id="_id10"></a>
+	<p id="Title10" style="margin-top:0px; margin-bottom:0px; font-size:30px; color:blue;"></p>
+	<p id="Snippet10" style="width:60%; font-size:20px; color:black; margin-block-start: 0px; margin-block-end: 0px;"></p>
+	</div>
+	
+	<script >
+	page();
+	</script>
+	<div style="text-align:center; " >
+		<input class="maintext" type="button"  value="Next" onclick="page()" style="text-align:center; font-size:25px"  >
+	</div>
+	
+</body>
+</html>
